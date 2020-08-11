@@ -9,6 +9,8 @@ import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
 
+import PlanCreate from './../routes/CreatePlan'
+import Plans from './../routes/plans'
 class App extends Component {
   constructor () {
     super()
@@ -47,6 +49,13 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
           )} />
+          <AuthenticatedRoute user={user} path='/create-plan' render={() => (
+            <PlanCreate msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/plans' render={() => (
+            <Plans msgAlert={this.msgAlert} user={user}/>
+          )} />
+
         </main>
         {msgAlerts.map((msgAlert, index) => (
           <AutoDismissAlert
