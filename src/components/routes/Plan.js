@@ -17,7 +17,7 @@ const Plan = (props) => {
       }
     })
       .then(res => {
-        console.log(res.data)
+        // console.log(res.data)
         setPlan(res.data)
       })
       .then(() => msgAlert({

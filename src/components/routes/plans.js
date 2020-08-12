@@ -10,7 +10,7 @@ const Plans = (props) => {
   const [plans, setPlans] = useState([])
 
   const { msgAlert } = props
-  console.log(props)
+  // console.log(props)
   useEffect(() => {
     axios({
       url: `${apiUrl}/fitnessPlans`,
@@ -20,7 +20,6 @@ const Plans = (props) => {
       }
     })
       .then(res => {
-        console.log(res.data)
         setPlans(res.data)
       })
       .then(() => msgAlert({
