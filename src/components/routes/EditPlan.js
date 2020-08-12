@@ -34,7 +34,6 @@ const PlanEdit = props => {
   }
   const handleSubmit = event => {
     event.preventDefault()
-    console.log(plan)
     axios({
       url: `${apiUrl}/fitnessPlans/${props.match.params.id}/`,
       method: 'PATCH',
@@ -43,7 +42,6 @@ const PlanEdit = props => {
       },
       data: { fitnessPlan: plan }
     })
-      .then(res => (console.log(res)))
       .then(() => setUpdated(true))
       // .catch(console.error)
       .then(() => msgAlert({

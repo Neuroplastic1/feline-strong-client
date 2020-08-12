@@ -7,7 +7,6 @@ const Plan = (props) => {
   const [plan, setPlan] = useState(null)
   const [deleted, setDeleted] = useState(false)
   const { msgAlert } = props
-  console.log(props)
   useEffect(() => {
     axios({
       url: `${apiUrl}/fitnessPlans/${props.match.params.id}/`,
@@ -17,7 +16,6 @@ const Plan = (props) => {
       }
     })
       .then(res => {
-        // console.log(res.data)
         setPlan(res.data)
       })
       .then(() => msgAlert({

@@ -30,7 +30,6 @@ const PlanCreate = (props) => {
       },
       data: { fitnessPlan: plan }
     })
-      // .then(res => console.log(res))
       .then(res => setCreatedPlanId(res.data.id))
       .then(() => msgAlert({
         heading: 'Plan Created',

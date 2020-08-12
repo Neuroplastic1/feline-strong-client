@@ -10,7 +10,6 @@ const Plans = (props) => {
   const [plans, setPlans] = useState([])
 
   const { msgAlert } = props
-  // console.log(props)
   useEffect(() => {
     axios({
       url: `${apiUrl}/fitnessPlans`,
