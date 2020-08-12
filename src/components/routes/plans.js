@@ -46,18 +46,18 @@ const Plans = (props) => {
     </div>
   ))
   return (
-    <div className="list-style">
-      <h4>Fitness Plan</h4>
-      <div className="center">
-        <div className="list-display">
-          <ul>
-            {plansJsx}
-          </ul>
-        </div>
+    <div className="list-style, list-display, center">
+      <h4>Fitness Plans</h4>
+      <div>
+        <ul>
+          {plansJsx}
+        </ul>
       </div>
-      <Link to={'/create-plan/'}>
-        <button className="button btn btn-success" >Create plan</button>
-      </Link>
+      <div>
+        <Link to={'/create-plan/'}>
+          <button className="button btn btn-primary" >Create plan</button>
+        </Link>
+      </div>
     </div>
   )
 }

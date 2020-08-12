@@ -1,1 +1,44 @@
 @import '~bootstrap/scss/bootstrap';
+
+ul {
+  text-align: center;
+  display: inline;
+  list-style-position: inside;
+  list-style: none
+}
+
+h4 {
+  text-align: center;
+  background-color: white;
+}
+
+list-style {
+  border: 5px solid #000000;
+  border-radius: 10px;
+  padding: 10px;
+  margin: auto;
+  border-style: groove;
+  background-color: #ffffff;
+  max-width: calc(100vh - 30vh);
+}
+p {
+  text-align: center;
+}
+
+.button {
+  variant: light;
+}
+
+.center {
+  text-align: center;
+}
+
+container {
+  margin-top: 40px;
+  text-align: center;
+  justify-content: center;
+}
+
+body {
+  background-color: white;
+}

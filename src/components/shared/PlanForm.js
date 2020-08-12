@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
 const PlanForm = ({ props, plan, handleSubmit, handleChange, cancelPath }) => (
   <Form onSubmit={handleSubmit}>
-    <div className="form-group">
+    <div className="form-group, center">
       <label>Date</label>
       <Form.Control
         placeholder="date"
@@ -11,8 +11,6 @@ const PlanForm = ({ props, plan, handleSubmit, handleChange, cancelPath }) => (
         name="date"
         onChange={handleChange}
       />
-    </div>
-    <div className="form-group">
       <Form.Label>Plan</Form.Label>
       <Form.Control
         placeholder="plan"
@@ -20,21 +18,20 @@ const PlanForm = ({ props, plan, handleSubmit, handleChange, cancelPath }) => (
         name="plan"
         onChange={handleChange}
       />
-    </div>
-    <div className="form-group">
-      <label>Nutrition</label>
+      <Form.Label>Nutrition</Form.Label>
       <Form.Control
         placeholder="Kibbles"
         value={plan.nutrition}
         name="nutrition"
         onChange={handleChange}
       />
+
+      <br />
+      <button type="submit" className="btn btn-primary">Submit</button>
+      <Link to={cancelPath}>
+        <button className="btn btn-danger">Cancel</button>
+      </Link>
     </div>
-    <br />
-    <button type="submit" className="btn btn-primary">Submit</button>
-    <Link to={cancelPath}>
-      <button className="btn btn-danger">Cancel</button>
-    </Link>
   </Form>
 )
 

@@ -69,11 +69,11 @@ const Plan = (props) => {
   }
 
   return (
-    <div className="list-style">
+    <div className="list-style, list-display, center">
       <h4>{plan.date}</h4>
       <p>{plan.plan}</p>
       <p>{plan.nutrition}</p>
-      <div className="center">
+      <div>
       </div>
       <br />
       <div>

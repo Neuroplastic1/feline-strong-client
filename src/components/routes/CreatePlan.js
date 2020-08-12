@@ -33,7 +33,7 @@ const PlanCreate = (props) => {
       // .then(res => console.log(res))
       .then(res => setCreatedPlanId(res.data.id))
       .then(() => msgAlert({
-        heading: 'Create plan success',
+        heading: 'Plan Created',
         message: messages.createListSuccess,
         variant: 'success'
       }))
@@ -48,11 +48,12 @@ const PlanCreate = (props) => {
   }
 
   if (createdPlanId) {
-    return <Redirect to={`/fitnessPlans/${createdPlanId}`} />
+    return <Redirect to={`/plans/${createdPlanId}`} />
   }
 
   return (
-    <div>
+    <div className= "center">
+      <h4>Create Fitness Plan Form</h4>
       <PlanForm
         plan={plan}
         handleChange={handleChange}
