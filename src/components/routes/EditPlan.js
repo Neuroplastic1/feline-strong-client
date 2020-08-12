@@ -15,7 +15,7 @@ const PlanEdit = props => {
   //  functions like a componentDidMount
   useEffect(() => {
     axios({
-      url: `${apiUrl}/fitnessPlans/${props.match.params.id}`,
+      url: `${apiUrl}/fitnessPlans/${props.match.params.id}/`,
       method: 'GET',
       headers: {
         'Authorization': `Token ${props.user.token}`
@@ -61,7 +61,7 @@ const PlanEdit = props => {
       })
   }
   if (updated) {
-    return <Redirect to={`/fitnessPlans/${props.match.params.id}`} />
+    return <Redirect to={`/plans/${plan.id}/`} />
   }
   return (
     <div>
@@ -69,7 +69,7 @@ const PlanEdit = props => {
         plan={plan}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
-        cancelPath={`/fitnessPlans/${props.match.params.id}`}
+        cancelPath={`/fitnessPlans/${props.match.params.id}/`}
       />
     </div>
   )
