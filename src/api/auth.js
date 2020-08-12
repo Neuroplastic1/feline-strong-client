@@ -40,7 +40,7 @@ export const signOut = user => {
 
 export const changePassword = (passwords, user) => {
   return axios({
-    url: apiUrl + '/change-password/',
+    url: apiUrl + '/change-pw/',
     method: 'PATCH',
     headers: {
       'Authorization': `Token ${user.token}`

@@ -77,7 +77,7 @@ const Plan = (props) => {
       </div>
       <br />
       <div>
-        <button className="button btn btn-danger" onClick={destroy}>Delete List</button>
+        <button className="button btn btn-danger" onClick={destroy}>Remove Plan</button>
         <Link to={`/plans/${plan.id}/edit`}>
           <button className="button btn btn-warning">Edit Plan</button>
         </Link>
