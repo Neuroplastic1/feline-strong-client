@@ -7,16 +7,19 @@ const Plan = (props) => {
   const [plan, setPlan] = useState(null)
   const [deleted, setDeleted] = useState(false)
   const { msgAlert } = props
-
+  console.log(props)
   useEffect(() => {
     axios({
-      url: `${apiUrl}/fitnessPlans/${props.match.params.planId}`,
+      url: `${apiUrl}/fitnessPlans/${props.match.params.id}/`,
       method: 'GET',
       headers: {
         'Authorization': `Token ${props.user.token}`
       }
     })
-      .then(res => setPlan(res.data))
+      .then(res => {
+        console.log(res.data)
+        setPlan(res.data)
+      })
       .then(() => msgAlert({
         heading: 'Showing selected plan',
         message: messages.showListSuccess,
@@ -33,10 +36,10 @@ const Plan = (props) => {
   }, [])
   const destroy = () => {
     axios({
-      url: `${apiUrl}/fitnessPlans/${props.match.params.planId}`,
+      url: `${apiUrl}/fitnessPlans/${props.match.params.id}/`,
       method: 'DELETE',
       headers: {
-        'Authorization': `Token token=${props.user.token}`
+        'Authorization': `Token ${props.user.token}`
       }
     })
       .then(() => setDeleted(true))
@@ -60,7 +63,7 @@ const Plan = (props) => {
   if (deleted) {
     return (
       <Redirect to={{
-        pathname: '/fitnessPlans', state: { msg: 'Plan deleted!' }
+        pathname: '/plans', state: { msg: 'Plan deleted!' }
       }} />
     )
   }
@@ -75,12 +78,12 @@ const Plan = (props) => {
       <br />
       <div>
         <button className="button btn btn-danger" onClick={destroy}>Delete List</button>
-        <Link to={`/fitnessPlans/${props.match.params.planId}/edit`}>
+        <Link to={`/plans/${plan.id}/edit`}>
           <button className="button btn btn-warning">Edit Plan</button>
         </Link>
       </div>
       <div>
-        <Link to='/fitnessPlans'>Back to all plans</Link>
+        <Link to='/plans'>Back to all plans</Link>
       </div>
     </div>
   )

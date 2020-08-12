@@ -16,16 +16,13 @@ const Plans = (props) => {
       url: `${apiUrl}/fitnessPlans`,
       method: 'GET',
       headers: {
-        'Authorization': `Token token=${props.user.token}`
+        'Authorization': `Token ${props.user.token}`
       }
     })
       .then(res => {
-        console.log(res)
-        return res
+        console.log(res.data)
+        setPlans(res.data)
       })
-      .then(res => setPlans(res.data))
-      // .catch(console.error)
-
       .then(() => msgAlert({
         heading: 'Showing all plans',
         message: messages.showPlansSuccess,
@@ -42,13 +39,15 @@ const Plans = (props) => {
   }, [])
 
   const plansJsx = plans.map(plan => (
-    <li key={plan.id}>
-      <Link to={`/fitnessPlans/${plan.id}/`}>{plan.date}</Link>
-    </li>
+    <div key={plan.id}>
+      <li>
+        <Link to={`/plans/${plan.id}/`}>{plan.date}</Link>
+      </li>
+    </div>
   ))
   return (
     <div className="list-style">
-      <h4></h4>
+      <h4>Fitness Plan</h4>
       <div className="center">
         <div className="list-display">
           <ul>
@@ -56,7 +55,7 @@ const Plans = (props) => {
           </ul>
         </div>
       </div>
-      <Link to={'/create-plans/'}>
+      <Link to={'/create-plan/'}>
         <button className="button btn btn-success" >Create plan</button>
       </Link>
     </div>

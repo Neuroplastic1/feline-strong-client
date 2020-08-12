@@ -10,7 +10,9 @@ import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
 
 import PlanCreate from './../routes/CreatePlan'
-import Plans from './../routes/plans'
+import Plans from './../routes/Plans'
+import Plan from './../routes/Plan'
+import PlanEdit from './../routes/EditPlan'
 class App extends Component {
   constructor () {
     super()
@@ -54,6 +56,12 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} exact path='/plans' render={() => (
             <Plans msgAlert={this.msgAlert} user={user}/>
+          )} />
+          <AuthenticatedRoute user={user} exact path='/plans/:id' render={(props) => (
+            <Plan {...props} msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/plans/:id/edit' render={(props) => (
+            <PlanEdit {...props} msgAlert={this.msgAlert} user={user} />
           )} />
 
         </main>
