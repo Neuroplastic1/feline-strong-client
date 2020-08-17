@@ -71,6 +71,7 @@ class SignIn extends Component {
                 value={password}
                 type="password"
                 placeholder="Password"
+                minlength="5"
                 onChange={this.handleChange}
               />
             </Form.Group>

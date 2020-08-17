@@ -72,8 +72,9 @@ class SignUp extends Component {
                 name="password"
                 value={password}
                 type="password"
-                placeholder="Password"
+                placeholder="Password(minimum 5 characters required)"
                 onChange={this.handleChange}
+                minlength="5"
               />
             </Form.Group>
             <Form.Group controlId="passwordConfirmation">
