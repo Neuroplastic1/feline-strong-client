@@ -10,7 +10,7 @@ import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
 
 import PlanCreate from './../routes/CreatePlan'
-import Plans from './../routes/Plans'
+import Plans from './../routes/plans'
 import Plan from './../routes/Plan'
 import PlanEdit from './../routes/EditPlan'
 class App extends Component {
