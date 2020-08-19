@@ -17,7 +17,7 @@ It's a fitness planner app for Felines and Humans where user can create, show ,e
 
 ## Links to Entity Relation Diagram
 
-     https://imgur.com/gallery/KKIucKN
+https://imgur.com/gallery/KKIucKN
 
 ## Planning and process
 To build this app first I scetched the wireframes and ERD to make a layout of the data flow through the Django server to react axios in the components.
